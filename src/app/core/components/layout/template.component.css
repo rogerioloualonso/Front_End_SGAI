@@ -1,0 +1,11 @@
+@media(max-width:767px){
+    .customHeight{
+        min-height: calc(100vh - 180px);
+    }
+}
+
+@media(min-width:768px){
+    .customHeight{
+        min-height: calc(100vh - 168px);
+    }
+}

@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css?family=Public+Sans&display=swap');
+
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+header {
+  height: auto !important;
+  background-color:#dedede91 !important;
+  color: #ccc !important;
+  font-family: 'Public Sans', sans-serif !important;
+}
+
+a{
+  text-decoration: none !important;
+}
+.logo{
+  font-size: 23px !important;
+  color: #ccc;
+  float: right;
+  text-align: center;
+  font-family: 'Public Sans', sans-serif !important;
+  /*max-width: 650px !important;*/
+
+}
+.btn {
+  font-family: 'Public Sans', sans-serif !important;
+  font-size: 20px !important;
+}
+
+.btn-custom{
+  float: right!important;
+  font-size: 16px!important;
+}
+
+p {
+  font-size: 16px !important;
+  font-family: 'Public Sans', sans-serif !important;
+}
+
+h5 {
+  font-size: 20px !important;
+  font-family: 'Public Sans', sans-serif !important;
+}
+#sub-titulo{
+  font-size: 45px !important;
+  font-family: 'Public Sans', sans-serif !important;
+  color: rgb(6, 26, 65);
+}
+
+.footer a {
+  color: rgb(248, 248, 248);
+}
+
+.footer {
+  margin: 0 !important;
+  text-align: center !important;
+  font-size: 13px;
+  background-color: rgba(224, 220, 215, 0.116);
+  color: rgba(8, 21, 54, 0.664);
+  font-family: 'Public Sans', sans-serif !important;
+  padding: 5px;
+  overflow: hidden;
+  position: relative;
+  bottom: 0;
+
+}
+
+/* Class do PrimeNG */
+.ui-confirmdialog-message, .ui-dialog-title {
+  font-size: 19px !important;
+  font-family: 'Public Sans', sans-serif !important;
+}
+
+.ui-toast-message{
+  font-size: 19px !important;
+  font-family: 'Public Sans', sans-serif !important;
+}
+/* corpo da tabela*/
+.ui-widget{
+  font-size: 18px !important;
+  font-family: 'Public Sans', sans-serif !important;
+}
+ .ui-chkbox{
+  font-size: 16px !important;
+}
+
+@media(max-width: 600px){
+  .logohe{
+    max-width: 200px!important;
+  }
+  .logo{
+    font-size: 14px!important;
+  }
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.badger{
+  padding: 2px 10px;
+  border-radius: 3px;
+  font-size: 12px!important;
+  margin-left: 12px;
+  color: #444;
+  background: #fff;
+  border: solid 1px;
+}
+
+.nav-item.active{
+  font-weight: 600!important;
+  color: #000!important;
+}
+.nav-item{
+  font-size: 16px!important;
+  color: #bbb!important;
+}
+.ui-tooltip-right{
+  border-right-color: #555!important;
+}
+body .ui-tooltip .ui-tooltip-text {
+  background-color: #555!important;
+  width: 100%!important;
+  font-size: 14px!important;
+  padding: 10px!important;
+  opacity: 0.9;
+ /*  text-align: justify !important; */
+}
+
+#the-count {
+  float: right;
+  padding: 0.1rem 0 0 0;
+  font-size: 0.875rem;
+}
+
+@media (max-width: 600px){
+  
+  h2{
+    font-size: 1.1rem!important;
+  }
+  .card-body {
+    word-break: break-all!important;
+}
+  h3, h4{
+    font-size: 1.3rem!important;
+  }
+  body .ui-panel .ui-panel-content {
+    padding: 20px 0!important;
+  }
+  .ui-table-responsive .ui-table-thead>tr>th{
+    display: block!important;
+  }
+  .ui-fluid{
+    padding: 0!important;
+  }
+  .btn{
+    font-size: 16px !important;
+    margin-bottom: 10px!important;
+  }
+  .material-icons{
+    font-size: 16px!important;
+  }
+  body .ui-table .ui-table-tbody > tr.ui-state-highlight{
+    color: #222222!important;
+    background-color: transparent!important;
+    font-weight: 800!important;
+  }
+}

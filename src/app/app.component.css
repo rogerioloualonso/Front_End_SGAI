@@ -1,0 +1,7 @@
+.container-fullsize{
+    min-height: calc(100vh - 199px)!important;
+}
+
+.mat-tooltip.tooltip {
+    font-size: 12px!important;
+  }

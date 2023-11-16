@@ -1,0 +1,36 @@
+@media(min-width: 768px) and (min-height: 720px){
+  .footer{
+    width: 100%;
+    /* position: absolute; */
+    bottom: 0;
+    padding: 16px!important;
+  }
+}
+
+.flex-all-centered{
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+@media(max-width:768px){
+  .flex-all-centered{
+    align-items: center;
+  }
+  img{
+    float: none!important;
+    margin: 7px auto;
+    width: 121px;
+  }
+}
+
+.logoRodape {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.imgLogo {
+  height: 38px;
+  max-width: 130px;
+}
