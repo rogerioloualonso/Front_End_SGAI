@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "eagenda": {
+    "sgai": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/eagenda",
+            "outputPath": "dist/sgai",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -66,11 +66,11 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "eagenda:build"
+            "browserTarget": "sgai:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "eagenda:build:production"
+              "browserTarget": "sgai:build:production"
             }
           }
         },
@@ -114,15 +114,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "eagenda:serve"
+            "devServerTarget": "sgai:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "eagenda:serve:production"
+              "devServerTarget": "sgai:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "eagenda"
+  "defaultProject": "sgai"
 }
