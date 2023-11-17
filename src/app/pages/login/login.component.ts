@@ -63,17 +63,31 @@ export class LoginComponent implements OnInit {
         if(result){
           sessionStorage.setItem('user', 'discente');
           sessionStorage.setItem('cpf', this.creds.cpf);
-          setTimeout(function(){ 
-            this.spinner.hide();
-          }, 20000);
           this.spinner.hide();
           this.router.navigate(['welcome'], { relativeTo: this.route });
         }else{
+          this.spinner.hide();
           this.messageService.add({ key: 'toast', severity: 'error', summary: "Atenção!" , detail: "Verifique suas credenciais e tente novamente." });
         }
       }, err => {
         this.spinner.hide();
-        this.messageService.add({ key: 'toast', severity: 'error', summary: "Atenção!" , detail: "Verifique suas credenciais e tente novamente." });
+        this.messageService.add({ key: 'toast', severity: 'error', summary: "Atenção!" , detail: "Ocorreu um erro inesperado." });
+        this.formGroup.reset();
+      })
+    }else if(this.role == "/docente"){
+      this.auth.authenticateDocente(this.creds).subscribe((result: any) => {
+        if(result){
+          sessionStorage.setItem('user', 'docente');
+          sessionStorage.setItem('cpf', this.creds.cpf);
+          this.spinner.hide();
+          this.router.navigate(['welcome'], { relativeTo: this.route });
+        }else{
+          this.spinner.hide();
+          this.messageService.add({ key: 'toast', severity: 'error', summary: "Atenção!" , detail: "Verifique suas credenciais e tente novamente." });
+        }
+      }, err => {
+        this.spinner.hide();
+        this.messageService.add({ key: 'toast', severity: 'error', summary: "Atenção!" , detail: "Ocorreu um erro inesperado." });
         this.formGroup.reset();
       })
     }

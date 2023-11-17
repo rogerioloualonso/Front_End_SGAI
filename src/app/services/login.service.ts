@@ -21,4 +21,8 @@ export class LoginService {
     return this.http.post(`${environment.url_api}/auth/discente`, creds)
   }
 
+  public authenticateDocente(creds: Credencias) {
+    return this.http.post(`${environment.url_api}/auth/docente`, creds)
+  }
+
 }
