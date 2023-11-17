@@ -7,6 +7,8 @@ import { HttpClient } from '@angular/common/http';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { LoginService } from 'src/app/services/login.service';
 import { Credencias } from 'src/app/models/credencias.model';
+import { DiscenteService } from 'src/app/services/discente.service';
+import { Discente } from 'src/app/models/discente.model';
 
 @Component({
   selector: 'app-welcomediscente',
@@ -21,11 +23,8 @@ export class WelcomeDiscenteComponent implements OnInit {
   loadModal: boolean = false;
 
   role: any;
-
-  creds: Credencias = {
-    cpf: "",
-    senha: ""
-  }
+  cpf:any;
+  discente:any;
 
   constructor(
     protected router: Router,
@@ -34,14 +33,24 @@ export class WelcomeDiscenteComponent implements OnInit {
     private http: HttpClient,
     private spinner: NgxSpinnerService,
     protected messageService: MessageService,
-    private auth: LoginService
+    private discenteService: DiscenteService
   ) {
 
   }
 
   ngOnInit() {
     this.role = this.router.url;
-    sessionStorage.setItem('timeOut', 'ativa');
+    this.cpf = sessionStorage.getItem("cpf");
+
+    this.getDocente(this.cpf);
+    sessionStorage.setItem('discente', this.discente);
   }
 
+  getDocente(cpf: any) {
+    this.discenteService.getDiscenteByCPF(cpf).then((discente: Discente) => {
+      this.discente = discente;
+    }).catch(err => {
+      this.router.navigate(['/error-sessao']);
+    });
+  }
 }
