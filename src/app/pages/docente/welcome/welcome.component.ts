@@ -5,8 +5,8 @@ import { FormGroup, FormBuilder, Validators} from '@angular/forms';
 import { MessageService } from 'primeng/api';
 import { HttpClient } from '@angular/common/http';
 import { NgxSpinnerService } from 'ngx-spinner';
-import { LoginService } from 'src/app/services/login.service';
-import { Credencias } from 'src/app/models/credencias.model';
+import { Docente } from 'src/app/models/docente.model';
+import { DocenteService } from 'src/app/services/docente.service';
 
 @Component({
   selector: 'app-welcomedocente',
@@ -21,11 +21,9 @@ export class WelcomeDocenteComponent implements OnInit {
   loadModal: boolean = false;
 
   role: any;
-
-  creds: Credencias = {
-    cpf: "",
-    senha: ""
-  }
+  nome:any;
+  cpf:any;
+  docente:any;
 
   constructor(
     protected router: Router,
@@ -34,14 +32,25 @@ export class WelcomeDocenteComponent implements OnInit {
     private http: HttpClient,
     private spinner: NgxSpinnerService,
     protected messageService: MessageService,
-    private auth: LoginService
+    private docenteService: DocenteService
   ) {
 
   }
 
   ngOnInit() {
     this.role = this.router.url;
-    sessionStorage.setItem('timeOut', 'ativa');
+    this.cpf = sessionStorage.getItem("cpf");
+
+    this.getDocente(this.cpf);
+    sessionStorage.setItem('docente', 'ativa');
+  }
+
+  getDocente(cpf: any) {
+    this.docenteService.getDocenteByCPF(cpf).then((docente: Docente) => {
+      this.docente = docente;
+    }).catch(err => {
+      this.router.navigate(['/error-sessao']);
+    });
   }
 
 }
