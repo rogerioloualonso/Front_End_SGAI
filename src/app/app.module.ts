@@ -19,6 +19,7 @@ import { Error404Component } from './pages/error/error404/error404.component';
 import { Utils } from './utils/utils';
 import { SharedUtil } from './utils/SharedUtil';
 import { LoginComponent } from './pages/login/login.component';
+import { WelcomeDiscenteComponent } from './pages/discente/welcome/welcome.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { LoginComponent } from './pages/login/login.component';
     AppComponent,
     SpinnerComponent,
     LoginComponent,
+    WelcomeDiscenteComponent,
     Error403Component,
     Error404Component
   ],

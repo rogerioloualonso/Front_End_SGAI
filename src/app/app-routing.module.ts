@@ -3,18 +3,19 @@ import { Routes, RouterModule } from '@angular/router';
 import { Error403Component } from './pages/error/error403/error403.component';
 import { Error404Component } from './pages/error/error404/error404.component';
 import { LoginComponent } from './pages/login/login.component';
+import { WelcomeDiscenteComponent } from './pages/discente/welcome/welcome.component';
 
 
 const routes: Routes = [
   {
-    path: 'admin',
+    path: 'discente',
     children: [
       {
         path: '', component: LoginComponent
       },
-      /*{
-        path: 'relatorio', component: RelatorioComponent
-      }*/
+      {
+        path: 'welcome', component: WelcomeDiscenteComponent
+      }
     ]
   },
   /*{
