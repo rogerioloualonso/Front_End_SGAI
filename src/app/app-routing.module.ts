@@ -5,6 +5,7 @@ import { Error404Component } from './pages/error/error404/error404.component';
 import { LoginComponent } from './pages/login/login.component';
 import { WelcomeDiscenteComponent } from './pages/discente/welcome/welcome.component';
 import {  WelcomeDocenteComponent } from './pages/docente/welcome/welcome.component';
+import { ListaTurmaComponent } from './pages/docente/listaTurmas/ListaTurma.component';
 
 
 const routes: Routes = [
@@ -27,6 +28,9 @@ const routes: Routes = [
       },
       {
         path: 'welcome', component: WelcomeDocenteComponent
+      },
+      {
+        path: 'turmas', component: ListaTurmaComponent
       }
     ]
   },

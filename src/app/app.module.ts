@@ -21,6 +21,8 @@ import { SharedUtil } from './utils/SharedUtil';
 import { LoginComponent } from './pages/login/login.component';
 import { WelcomeDiscenteComponent } from './pages/discente/welcome/welcome.component';
 import { WelcomeDocenteComponent } from './pages/docente/welcome/welcome.component';
+import { ListaTurmaComponent } from './pages/docente/listaTurmas/ListaTurma.component';
+import { TurmaService } from './services/turma.service';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,7 @@ import { WelcomeDocenteComponent } from './pages/docente/welcome/welcome.compone
     LoginComponent,
     WelcomeDiscenteComponent,
     WelcomeDocenteComponent,
+    ListaTurmaComponent,
     Error403Component,
     Error404Component
   ],
@@ -49,6 +52,7 @@ import { WelcomeDocenteComponent } from './pages/docente/welcome/welcome.compone
   providers: [
     NgxSpinnerModule,
     MessageService,
+    TurmaService,
     ToastModule,
     Utils,
     SharedUtil
