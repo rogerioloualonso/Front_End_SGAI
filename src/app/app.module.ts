@@ -20,6 +20,7 @@ import { Utils } from './utils/utils';
 import { SharedUtil } from './utils/SharedUtil';
 import { LoginComponent } from './pages/login/login.component';
 import { WelcomeDiscenteComponent } from './pages/discente/welcome/welcome.component';
+import { WelcomeDocenteComponent } from './pages/docente/welcome/welcome.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { WelcomeDiscenteComponent } from './pages/discente/welcome/welcome.compo
     SpinnerComponent,
     LoginComponent,
     WelcomeDiscenteComponent,
+    WelcomeDocenteComponent,
     Error403Component,
     Error404Component
   ],

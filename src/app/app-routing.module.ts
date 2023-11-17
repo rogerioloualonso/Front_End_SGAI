@@ -4,6 +4,7 @@ import { Error403Component } from './pages/error/error403/error403.component';
 import { Error404Component } from './pages/error/error404/error404.component';
 import { LoginComponent } from './pages/login/login.component';
 import { WelcomeDiscenteComponent } from './pages/discente/welcome/welcome.component';
+import {  WelcomeDocenteComponent } from './pages/docente/welcome/welcome.component';
 
 
 const routes: Routes = [
@@ -18,19 +19,17 @@ const routes: Routes = [
       }
     ]
   },
-  /*{
-    path: 'johnson', children: [
+  {
+    path: 'docente',
+    children: [
       {
-        path: '', component: AgendamentoComponent
+        path: '', component: LoginComponent
       },
       {
-        path: 'agendamento', component: CadastroComponent
-      },
-      {
-        path: 'confirmacao', component: ConfirmacaoComponent
+        path: 'welcome', component: WelcomeDocenteComponent
       }
     ]
-  },*/
+  },
   {
     path: 'error-sessao', component: Error403Component,
   },
