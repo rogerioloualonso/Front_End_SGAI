@@ -42,7 +42,7 @@ export class WelcomeDocenteComponent implements OnInit {
     this.cpf = sessionStorage.getItem("cpf");
 
     this.getDocente(this.cpf);
-    sessionStorage.setItem('docente', 'ativa');
+    sessionStorage.setItem('docente', this.docente);
   }
 
   getDocente(cpf: any) {

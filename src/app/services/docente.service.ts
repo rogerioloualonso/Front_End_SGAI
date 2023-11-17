@@ -18,9 +18,9 @@ export class DocenteService {
     private http: HttpClient
   ) { }
        
-  public getDocenteByCPF(id: number) {
+  public getDocenteByCPF(cpf: any) {
     return new Promise((resolve, reject) => {
-      this.http.get(`${environment.url_api}/docente/${id}`).subscribe(
+      this.http.get(`${environment.url_api}/docente/${cpf}`).subscribe(
         payload => {
           resolve(payload)
         }, err => {
