@@ -7,7 +7,6 @@ import { HttpClient } from '@angular/common/http';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { LoginService } from 'src/app/services/login.service';
 import { Credencias } from 'src/app/models/credencias.model';
-//import jwtDecode from 'jwt-decode';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +15,6 @@ import { Credencias } from 'src/app/models/credencias.model';
 })
 export class LoginComponent implements OnInit {
   @Input() mensagem: string;
-
   formGroup: FormGroup;
   sessaoExpirou: boolean
   mensagemError: string;
@@ -25,7 +23,7 @@ export class LoginComponent implements OnInit {
   role: any;
 
   creds: Credencias = {
-    login: "",
+    cpf: "",
     senha: ""
   }
 
@@ -45,7 +43,7 @@ export class LoginComponent implements OnInit {
     this.role = this.router.url;
 
     this.formGroup = this.frmBuilder.group({
-      'login': ['', [Validators.required]],
+      'cpf': ['', [Validators.required]],
       'senha': ['', [Validators.required]]
     });
 
@@ -54,29 +52,32 @@ export class LoginComponent implements OnInit {
     sessionStorage.setItem('timeOut', 'ativa');
   }
 
-  public timeoutEncerrarSessao() {
-    setTimeout(() => {
-      sessionStorage.setItem('timeOut', 'expirou');
-      this.router.navigate(['/error-sessao']);
-    }, 1680000);
-  }
-
   public login() {
-      this.spinner.show();
+    this.spinner.show();
 
-      this.creds.login = this.formGroup.get('login').value;
-      this.creds.senha = this.formGroup.get('senha').value;
-      
-      this.auth.authenticateLoginAdmin(this.creds).subscribe((result: any) => {
-        var token = result.token
-        sessionStorage.setItem("token", token)
-        var infoAdmin = JSON.parse(sessionStorage.getItem("infoAdmin"))
-        this.router.navigate(['relatorio'], { relativeTo: this.route });
+    this.creds.cpf = this.formGroup.get('cpf').value;
+    this.creds.senha = this.formGroup.get('senha').value;
+
+    if(this.role == "/discente"){
+      this.auth.authenticateDiscente(this.creds).subscribe((result: any) => {
+        if(result){
+          sessionStorage.setItem('user', 'discente');
+          sessionStorage.setItem('cpf', this.creds.cpf);
+          setTimeout(function(){ 
+            this.spinner.hide();
+          }, 20000);
+          this.spinner.hide();
+          this.router.navigate(['welcome'], { relativeTo: this.route });
+        }else{
+          this.messageService.add({ key: 'toast', severity: 'error', summary: "Atenção!" , detail: "Verifique suas credenciais e tente novamente." });
+        }
       }, err => {
         this.spinner.hide();
         this.messageService.add({ key: 'toast', severity: 'error', summary: "Atenção!" , detail: "Verifique suas credenciais e tente novamente." });
         this.formGroup.reset();
       })
+    }
+    
   }
 
   async onSubmit(value) {

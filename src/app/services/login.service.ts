@@ -17,8 +17,8 @@ export class LoginService {
     private http: HttpClient
   ) { }
        
-  public authenticateLoginAdmin(creds: Credencias) {
-    return this.http.post(`${environment.url_api}/auth/login`, creds)
+  public authenticateDiscente(creds: Credencias) {
+    return this.http.post(`${environment.url_api}/auth/discente`, creds)
   }
 
 }

@@ -1,9 +1,8 @@
 export class Credencias {
 
     constructor(
-        public login?: string,
+        public cpf?: string,
         public senha?: string,
-
     ) { }
 
 
