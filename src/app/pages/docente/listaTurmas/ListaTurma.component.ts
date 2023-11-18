@@ -5,7 +5,6 @@ import { FormGroup, FormBuilder, Validators} from '@angular/forms';
 import { MessageService } from 'primeng/api';
 import { HttpClient } from '@angular/common/http';
 import { NgxSpinnerService } from 'ngx-spinner';
-import { DocenteService } from 'src/app/services/docente.service';
 import { Turma } from 'src/app/models/turma.model';
 import { TurmaService } from 'src/app/services/turma.service';
 
@@ -28,8 +27,6 @@ export class ListaTurmaComponent implements OnInit {
   constructor(
     protected router: Router,
     public route: ActivatedRoute,
-    private http: HttpClient,
-    private spinner: NgxSpinnerService,
     protected messageService: MessageService,
     private turmaService: TurmaService
   ) {

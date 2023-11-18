@@ -5,8 +5,6 @@ import { FormGroup, FormBuilder, Validators} from '@angular/forms';
 import { MessageService } from 'primeng/api';
 import { HttpClient } from '@angular/common/http';
 import { NgxSpinnerService } from 'ngx-spinner';
-import { LoginService } from 'src/app/services/login.service';
-import { Credencias } from 'src/app/models/credencias.model';
 import { DiscenteService } from 'src/app/services/discente.service';
 import { Discente } from 'src/app/models/discente.model';
 
@@ -29,9 +27,6 @@ export class WelcomeDiscenteComponent implements OnInit {
   constructor(
     protected router: Router,
     public route: ActivatedRoute,
-    private frmBuilder: FormBuilder,
-    private http: HttpClient,
-    private spinner: NgxSpinnerService,
     protected messageService: MessageService,
     private discenteService: DiscenteService
   ) {

@@ -38,7 +38,6 @@ export class AgendamentoComponent implements OnInit {
     protected router: Router,
     public route: ActivatedRoute,
     private frmBuilder: FormBuilder,
-    private http: HttpClient,
     private spinner: NgxSpinnerService,
     protected messageService: MessageService,
     private ambienteService: AmbienteService,

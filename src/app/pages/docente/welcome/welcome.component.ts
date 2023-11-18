@@ -3,8 +3,6 @@ import { Component, Input, OnInit} from '@angular/core';
 import { FormGroup, FormBuilder, Validators} from '@angular/forms';
 
 import { MessageService } from 'primeng/api';
-import { HttpClient } from '@angular/common/http';
-import { NgxSpinnerService } from 'ngx-spinner';
 import { Docente } from 'src/app/models/docente.model';
 import { DocenteService } from 'src/app/services/docente.service';
 
@@ -28,9 +26,6 @@ export class WelcomeDocenteComponent implements OnInit {
   constructor(
     protected router: Router,
     public route: ActivatedRoute,
-    private frmBuilder: FormBuilder,
-    private http: HttpClient,
-    private spinner: NgxSpinnerService,
     protected messageService: MessageService,
     private docenteService: DocenteService
   ) {
