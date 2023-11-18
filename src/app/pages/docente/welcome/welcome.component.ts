@@ -42,7 +42,6 @@ export class WelcomeDocenteComponent implements OnInit {
     this.cpf = sessionStorage.getItem("cpf");
 
     this.getDocente(this.cpf);
-    sessionStorage.setItem('docente', this.docente);
   }
 
   getDocente(cpf: any) {
@@ -51,6 +50,16 @@ export class WelcomeDocenteComponent implements OnInit {
     }).catch(err => {
       this.router.navigate(['/error-sessao']);
     });
+  }
+
+  goTurmas(){
+    sessionStorage.setItem('idDocente', this.docente.id);
+    this.router.navigate(['docente/turmas']);
+  }
+
+  goAgendar(){
+    sessionStorage.setItem('idDocente', this.docente.id);
+    this.router.navigate(['docente/agendar']);
   }
 
 }

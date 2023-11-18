@@ -51,4 +51,9 @@ export class ListaTurmaComponent implements OnInit {
     });
   }
 
+  goAgendar(){
+    sessionStorage.setItem('idDocente', this.idDocente);
+    this.router.navigate(['docente/agendar']);
+  }
+
 }

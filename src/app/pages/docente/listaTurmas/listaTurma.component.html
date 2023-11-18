@@ -2,7 +2,7 @@
   <div class="row justify-content-center mt-2">
 
     <div class="col-12 col-md-6 col-lg-2 mb-5">
-      <button class="btn btn-outline-primary mt-2 w-100">Agendar</button>
+      <button class="btn btn-outline-primary mt-2 w-100" (click)="goAgendar()">Agendar</button>
       <button class="btn btn-outline-primary mt-2 w-100">Turmas</button>
       <button class="btn btn-outline-primary mt-2 w-100">Aulas</button>
     </div>
@@ -10,7 +10,7 @@
     <div class="col-12 col-md-6 col-lg-10 mb-5 mt-2">
       <h1 class="text-center text-roboto">Suas turmas:</h1>
 
-      <div *ngIf="turmas?.length > 0; else semturmas" class="container mt-4">
+      <div *ngIf="turmas?.length > 0" class="container mt-4">
         <div class="row justify-content-center">
           <div class="col-md-4" *ngFor="let turma of turmas">
 
@@ -37,14 +37,11 @@
         </div>
       </div>
 
-      <ng-template #semturmas>
-        <div class="card mb-3 ">
-          <div class="card-body d-flex flex-row w-10 justify-content-center">
-            Nenhuma turma cadastrada!  :/
-          </div>
+      <div *ngIf="turmas?.length == 0 || turmas?.length == null" class="card mb-3 ">
+        <div class="card-body d-flex flex-row w-10 justify-content-center">
+          Nenhuma turma cadastrada!  :/
         </div>
-      </ng-template>
-
+      </div>
     </div>
   </div>
 </div>
