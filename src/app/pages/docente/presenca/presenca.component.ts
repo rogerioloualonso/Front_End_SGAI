@@ -75,7 +75,7 @@ export class PresencaComponent implements OnInit {
 
   goTurmas(){
     sessionStorage.setItem('idDocente', this.idDocente);
-    this.router.navigate(['docente/aulas']);
+    this.router.navigate(['docente/turmas']);
   }
 
 }
