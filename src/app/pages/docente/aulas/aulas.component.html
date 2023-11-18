@@ -27,6 +27,7 @@
               <th scope="col" class="w-30">Fim</th>
               <th scope="col">Situacao</th>
               <th scope="col" class="text-center">Ações</th>
+              <th scope="col" class="text-center">Relatórios</th>
             </tr>
           </thead>
           <tbody>
@@ -41,6 +42,11 @@
               <td>
                 <button type="button" class="btn btn-success btn-sm mr-2" (click)="iniciarAula(aula.id)">Iniciar</button>
                 <button type="button" class="btn btn-warning btn-sm" (click)="finalizarAula(aula.id)">Finalizar</button>
+              </td>
+              <td class="text-center">
+                <button type="button" class="btn btn-success btn-sm text-center" (click)="goPresenca(aula.id)"  title="Iniciar Aula">
+                  <i class="fa-regular fa-file-powerpoint"></i>
+                </button>
               </td>
             </tr>
           </tbody>

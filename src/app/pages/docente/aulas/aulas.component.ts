@@ -5,9 +5,6 @@ import { FormGroup, FormBuilder, Validators} from '@angular/forms';
 import { MessageService } from 'primeng/api';
 import { HttpClient } from '@angular/common/http';
 import { NgxSpinnerService } from 'ngx-spinner';
-import { DocenteService } from 'src/app/services/docente.service';
-import { Turma } from 'src/app/models/turma.model';
-import { TurmaService } from 'src/app/services/turma.service';
 import { Aula } from 'src/app/models/aula.model';
 import { EventoService } from 'src/app/services/evento.service';
 
@@ -30,7 +27,6 @@ export class AulasComponent implements OnInit {
   constructor(
     protected router: Router,
     public route: ActivatedRoute,
-    private http: HttpClient,
     private spinner: NgxSpinnerService,
     protected messageService: MessageService,
     private eventoService: EventoService
@@ -63,9 +59,14 @@ export class AulasComponent implements OnInit {
     this.router.navigate(['docente/turmas']);
   }
 
+  goPresenca(idAula: any){
+    sessionStorage.setItem('idAula', idAula);
+    this.router.navigate(['docente/aulas/presenca']);
+  }
+
   iniciarAula(idEvento: any){
     this.eventoService.iniciarEvento(idEvento).subscribe((result: any) => {
-      this.router.navigate(['../../docente/welcome'], { relativeTo: this.route });
+      this.getAulasDocente(this.idDocente);
       this.messageService.add({ key: 'toast', severity: 'success', summary: "Sucesso!" , detail: "Aula Iniciada!" });
   }, err => {
     this.spinner.hide();
@@ -76,7 +77,7 @@ export class AulasComponent implements OnInit {
 
   finalizarAula(idEvento: any){
     this.eventoService.finalizarEvento(idEvento).subscribe((result: any) => {
-      this.router.navigate(['../../docente/welcome'], { relativeTo: this.route });
+      this.getAulasDocente(this.idDocente);
       this.messageService.add({ key: 'toast', severity: 'success', summary: "Sucesso!" , detail: "Aula Finalizada!" });
   }, err => {
     this.spinner.hide();
