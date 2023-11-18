@@ -72,7 +72,7 @@ export class AgendamentoComponent implements OnInit {
   }
 
   getTurmasByDocente() {
-    this.turmaService.getTurmaById(this.idDocente).then((turmas: Turma[]) => {
+    this.turmaService.getTurmaByIdDocente(this.idDocente).then((turmas: Turma[]) => {
       this.turmas = turmas;
     }).catch(err => {
       this.router.navigate(['/error-sessao']);
