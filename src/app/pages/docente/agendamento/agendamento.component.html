@@ -1,0 +1,54 @@
+<div class="container-fullsize">
+  <div class="row justify-content-center mt-2">
+
+    <div class="col-12 col-md-6 col-lg-2 mb-5">
+      <button class="btn btn-outline-primary mt-2 w-100">Agendar</button>
+      <button class="btn btn-outline-primary mt-2 w-100" (click)="goTurmas()">Turmas</button>
+      <button class="btn btn-outline-primary mt-2 w-100">Aulas</button>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-10 mb-2 pl-5">
+      <h1 class="text-center text-roboto">Novo Agendamento</h1>
+
+      <form class="p-5" role="form" [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup.value)">
+        <div class="form-group">
+
+          <label for="listaDinamica text-roboto">Ambiente</label>
+          <select class="form-control" id="listaDinamica" name="listaDinamica" style="width: 400px;" formControlName="ambiente">
+            <option value="" disabled selected>Selecione uma opção</option>
+            <option *ngFor="let ambiente of ambientes" [value]="ambiente.id">{{ ambiente.nome }}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+
+          <label for="listaDinamica text-roboto">Turma</label>
+          <select class="form-control" id="listaDinamica" name="listaDinamica" style="width: 400px;" formControlName="turma">
+            <option value="" disabled selected>Selecione uma opção</option>
+            <option *ngFor="let turma of turmas" [value]="turma.id">{{ turma.nome }}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="data">Data</label>
+          <input type="date" class="form-control" formControlName="data" id="data" name="data" style="width: 200px;">
+        </div>
+
+        <div class="form-group">
+          <label for="horaInicio">Hora de Início</label>
+          <input type="time" class="form-control" formControlName="horaInicio" id="horaInicio" name="horaInicio" style="width: 200px;">
+        </div>
+
+        <div class="form-group">
+          <label for="horaTermino">Hora de Término</label>
+          <input type="time" class="form-control" formControlName="horaFim" id="horaTermino" name="horaTermino" style="width: 200px;">
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-3"  [disabled]="!formGroup.valid">
+          Agendar
+          <i class="fas fa-paper-plane ml-2"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

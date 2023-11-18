@@ -23,6 +23,7 @@ import { WelcomeDiscenteComponent } from './pages/discente/welcome/welcome.compo
 import { WelcomeDocenteComponent } from './pages/docente/welcome/welcome.component';
 import { ListaTurmaComponent } from './pages/docente/listaTurmas/ListaTurma.component';
 import { TurmaService } from './services/turma.service';
+import { AgendamentoComponent } from './pages/docente/agendamento/agendamento.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { TurmaService } from './services/turma.service';
     LoginComponent,
     WelcomeDiscenteComponent,
     WelcomeDocenteComponent,
+    AgendamentoComponent,
     ListaTurmaComponent,
     Error403Component,
     Error404Component
