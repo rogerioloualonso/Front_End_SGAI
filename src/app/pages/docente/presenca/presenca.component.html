@@ -1,0 +1,48 @@
+<div class="container-fullsize">
+  <div class="row justify-content-center mt-2">
+
+    <div class="col-12 col-md-6 col-lg-2 mb-5">
+      <button class="btn btn-outline-primary mt-2 w-100" (click)="goAgendar()">Agendar</button>
+      <button class="btn btn-outline-primary mt-2 w-100" (click)="goTurmas()">Turmas</button>
+      <button class="btn btn-outline-primary mt-2 w-100">Aulas</button>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-10 mb-5 mt-2">
+      <h1 class="text-center text-roboto">Presenças:</h1>
+
+      <div *ngIf="!presencas || presencas.length === 0" class="card mb-3 mt-5 ">
+        <div class="card-body d-flex flex-row w-10 justify-content-center">
+          Nenhuma aula agendada!  :/
+        </div>
+      </div>
+
+      <div *ngIf="presencas && presencas.length > 0" class="container mt-4">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col" class="w-10">Nome</th>
+              <th scope="col" class="w-15">Matrícula</th>
+              <th scope="col" class="w-10">Entrada</th>
+              <th scope="col" class="w-30">Saída</th>
+              <th scope="col">Situacao</th>
+              <th scope="col" >Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let presenca of presencas">
+              <td>{{presenca.nomeDiscente}}</td>
+              <td>{{presenca.matricula}}</td>
+              <td>{{presenca.inicio}}</td>
+              <td>{{presenca.fim}}</td>
+              <td>{{presenca.situacao}}</td>
+
+              <td>
+                <button type="button" class="btn btn-warning btn-sm mr-2" (click)="excluirPresenca(presenca.id)">Excluir</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
