@@ -21,4 +21,25 @@ export class EventoService {
     return this.http.post(`${environment.url_api}/evento`, data)
   }
 
+  public iniciarEvento(id: any) {
+    return this.http.post(`${environment.url_api}/evento/iniciar/${id}`, id)
+  }
+
+  public finalizarEvento(id: any) {
+    return this.http.post(`${environment.url_api}/evento/finalizar/${id}`, id)
+  }
+
+
+  public getEventoByDocente(idDocente: any) {
+    return new Promise((resolve, reject) => {
+      this.http.get(`${environment.url_api}/evento/${idDocente}`).subscribe(
+        payload => {
+          resolve(payload)
+        }, err => {
+          reject(err.error.message);
+        }  
+      )
+    })
+  }
+
 }
