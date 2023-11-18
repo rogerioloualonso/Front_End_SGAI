@@ -111,9 +111,9 @@ export class AgendamentoComponent implements OnInit {
     this.router.navigate(['docente/turmas']);
   }
 
-  goAgendar(){
+  goAulas(){
     sessionStorage.setItem('idDocente', this.idDocente);
-    this.router.navigate(['docente/agendar']);
+    this.router.navigate(['docente/aulas']);
   }
 
 }

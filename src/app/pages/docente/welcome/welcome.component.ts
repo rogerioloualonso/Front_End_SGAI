@@ -62,4 +62,9 @@ export class WelcomeDocenteComponent implements OnInit {
     this.router.navigate(['docente/agendar']);
   }
 
+  goAulas(){
+    sessionStorage.setItem('idDocente', this.docente.id);
+    this.router.navigate(['docente/aulas']);
+  }
+
 }
