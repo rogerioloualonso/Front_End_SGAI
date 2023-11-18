@@ -29,6 +29,10 @@ export class EventoService {
     return this.http.post(`${environment.url_api}/evento/finalizar/${id}`, id)
   }
 
+  public excluirEvento(id: any) {
+    return this.http.delete(`${environment.url_api}/evento/excluir/${id}`, id)
+  }
+
 
   public getEventoByDocente(idDocente: any) {
     return new Promise((resolve, reject) => {

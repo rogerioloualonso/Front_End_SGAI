@@ -86,4 +86,15 @@ export class AulasComponent implements OnInit {
   })
   }
 
+  excluirAula(idEvento: any){
+    this.eventoService.excluirEvento(idEvento).subscribe((result: any) => {
+      this.getAulasDocente(this.idDocente);
+      this.messageService.add({ key: 'toast', severity: 'success', summary: "Sucesso!" , detail: "Aula Excluída!" });
+  }, err => {
+    this.spinner.hide();
+    this.messageService.add({ key: 'toast', severity: 'error', summary: "Atenção!" , detail: "Ocorreu um erro inesperado." });
+    this.formGroup.reset();
+  })
+  }
+
 }

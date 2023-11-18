@@ -40,11 +40,18 @@
               <td>{{aula.situacao}}</td>
 
               <td>
-                <button type="button" class="btn btn-success btn-sm mr-2" (click)="iniciarAula(aula.id)">Iniciar</button>
-                <button type="button" class="btn btn-warning btn-sm" (click)="finalizarAula(aula.id)">Finalizar</button>
+                <button type="button" class="btn btn-success btn-sm mr-2" (click)="iniciarAula(aula.id)" title="Iniciar Aula">
+                  <i class="fa-solid fa-play"></i>
+                </button>
+                <button type="button" class="btn btn-warning btn-sm mr-2" (click)="finalizarAula(aula.id)" title="finalizar Aula">
+                  <i class="fa-regular fa-square-check"></i>
+                </button>
+                <button type="button" class="btn btn-danger btn-sm" (click)="excluirAula(aula.id)" title="Cancelar Aula">
+                  <i class="fa-solid fa-trash"></i>
+                </button>
               </td>
               <td class="text-center">
-                <button type="button" class="btn btn-success btn-sm text-center" (click)="goPresenca(aula.id)"  title="Iniciar Aula">
+                <button type="button" class="btn btn-success btn-sm text-center" (click)="goPresenca(aula.id)"  title="Relatório de presença">
                   <i class="fa-regular fa-file-powerpoint"></i>
                 </button>
               </td>
