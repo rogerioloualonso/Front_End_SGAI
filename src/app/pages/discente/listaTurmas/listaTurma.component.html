@@ -1,0 +1,46 @@
+<div class="container-fullsize">
+  <div class="row justify-content-center mt-2">
+
+    <div class="col-12 col-md-6 col-lg-2 mb-5">
+      <button class="btn btn-outline-primary mt-2 w-100" (click)="goAgendar()">Eventos</button>
+      <button class="btn btn-outline-primary mt-2 w-100">Turmas</button>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-10 mb-5 mt-2">
+      <h1 class="text-center text-roboto">Suas turmas:</h1>
+
+      <div *ngIf="turmas?.length == 0 || turmas?.length == null" class="card mb-3 ">
+        <div class="card-body d-flex flex-row w-10 justify-content-center">
+          Nenhuma turma cadastrada!  :/
+        </div>
+      </div>
+
+      <div *ngIf="turmas?.length > 0" class="container mt-4">
+        <div class="row justify-content-center">
+          <div class="col-md-4" *ngFor="let turma of turmas">
+
+            <div class="card mb-3 ">
+              <div class="card-body d-flex flex-row w-10 justify-content-center">
+
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col" class="w-50">Nome</th>
+                      <th scope="col">Turno</th>
+                      <th scope="col">Situação</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>{{turma.nome}}</td>
+                      <td>{{turma.turno}}</td>
+                      <td>{{turma.situacao}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

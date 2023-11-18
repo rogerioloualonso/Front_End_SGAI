@@ -18,9 +18,21 @@ export class TurmaService {
     private http: HttpClient
   ) { }
        
-  public getTurmaById(id: any) {
+  public getTurmaByIdDocente(id: any) {
     return new Promise((resolve, reject) => {
       this.http.get(`${environment.url_api}/turma/byDocente/${id}`).subscribe(
+        payload => {
+          resolve(payload)
+        }, err => {
+          reject(err.error.message);
+        }  
+      )
+    })
+  }
+
+  public getTurmaByIdDiscente(id: any) {
+    return new Promise((resolve, reject) => {
+      this.http.get(`${environment.url_api}/turma/byDiscente/${id}`).subscribe(
         payload => {
           resolve(payload)
         }, err => {

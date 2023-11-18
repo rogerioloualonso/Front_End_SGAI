@@ -9,6 +9,7 @@ import { ListaTurmaComponent } from './pages/docente/listaTurmas/ListaTurma.comp
 import { AgendamentoComponent } from './pages/docente/agendamento/agendamento.component';
 import { AulasComponent } from './pages/docente/aulas/aulas.component';
 import { PresencaComponent } from './pages/docente/presenca/presenca.component';
+import { ListaTurmaDiscenteComponent } from './pages/discente/listaTurmas/ListaTurma.component';
 
 
 const routes: Routes = [
@@ -20,6 +21,10 @@ const routes: Routes = [
       },
       {
         path: 'welcome', component: WelcomeDiscenteComponent
+      }
+      ,
+      {
+        path: 'turmas', component: ListaTurmaDiscenteComponent
       }
     ]
   },

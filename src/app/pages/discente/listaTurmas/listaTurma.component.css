@@ -3,7 +3,6 @@
 .text-roboto{
   font-family: 'Roboto', sans-serif;
 }
-
 .card{
   border-radius: 30px;
   border-width: 2px;
@@ -37,4 +36,8 @@
 
 .btn {
   cursor: pointer !important;
+}
+
+button.btn.btn-outline-primary {
+  cursor: pointer;
 }

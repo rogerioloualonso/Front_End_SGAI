@@ -38,7 +38,7 @@ export class WelcomeDiscenteComponent implements OnInit {
     this.cpf = sessionStorage.getItem("cpf");
 
     this.getDocente(this.cpf);
-    sessionStorage.setItem('discente', this.discente);
+    sessionStorage.setItem('idDiscente', this.discente.id);
   }
 
   getDocente(cpf: any) {
@@ -48,4 +48,15 @@ export class WelcomeDiscenteComponent implements OnInit {
       this.router.navigate(['/error-sessao']);
     });
   }
+
+  goTurmas(){
+    sessionStorage.setItem('idDiscente', this.discente.id);
+    this.router.navigate(['discente/turmas']);
+  }
+
+  goEventos(){
+    sessionStorage.setItem('idDiscente', this.discente.id);
+    this.router.navigate(['discente/aulas']);
+  }
+
 }

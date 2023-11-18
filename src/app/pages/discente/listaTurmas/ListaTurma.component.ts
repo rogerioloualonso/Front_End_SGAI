@@ -9,11 +9,11 @@ import { Turma } from 'src/app/models/turma.model';
 import { TurmaService } from 'src/app/services/turma.service';
 
 @Component({
-  selector: 'app-listaturma',
+  selector: 'app-listaturmadiscente',
   templateUrl: './listaTurma.component.html',
   styleUrls: ['./listaTurma.component.css'],
 })
-export class ListaTurmaComponent implements OnInit {
+export class ListaTurmaDiscenteComponent implements OnInit {
   @Input() mensagem: string;
   formGroup: FormGroup;
   sessaoExpirou: boolean
@@ -21,7 +21,7 @@ export class ListaTurmaComponent implements OnInit {
   loadModal: boolean = false;
 
   role: any;
-  idDocente:any;
+  idDiscente:any;
   turmas: any;
 
   constructor(
@@ -35,27 +35,21 @@ export class ListaTurmaComponent implements OnInit {
 
   ngOnInit() {
     this.role = this.router.url;
-    this.idDocente = sessionStorage.getItem("idDocente");
-    console.log(this.idDocente);
-    this.getTurmasDocente(this.idDocente);
+    this.idDiscente = sessionStorage.getItem("idDiscente");
+    this.getTurmasDiscente(this.idDiscente);
   }
 
-  getTurmasDocente(cpf: any) {
-    this.turmaService.getTurmaByIdDocente(cpf).then((turmas: Turma[]) => {
+  getTurmasDiscente(id: any) {
+    this.turmaService.getTurmaByIdDiscente(id).then((turmas: Turma[]) => {
       this.turmas = turmas;
     }).catch(err => {
       this.router.navigate(['/error-sessao']);
     });
   }
 
-  goAgendar(){
-    sessionStorage.setItem('idDocente', this.idDocente);
-    this.router.navigate(['docente/agendar']);
-  }
-
-  goAulas(){
-    sessionStorage.setItem('idDocente', this.idDocente);
-    this.router.navigate(['docente/aulas']);
+  goTurmas(){
+    sessionStorage.setItem('idDiscente', this.idDiscente);
+    this.router.navigate(['discente/turmas']);
   }
 
 }
