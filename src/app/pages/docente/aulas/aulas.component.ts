@@ -67,7 +67,7 @@ export class AulasComponent implements OnInit {
   iniciarAula(idEvento: any){
     this.eventoService.iniciarEvento(idEvento).subscribe((result: any) => {
       this.getAulasDocente(this.idDocente);
-      this.messageService.add({ key: 'toast', severity: 'success', summary: "Sucesso!" , detail: "Aula Iniciada!" });
+      this.messageService.add({ key: 'toast', severity: 'success', summary: "Sucesso!" , detail: "Evento Iniciado!" });
   }, err => {
     this.spinner.hide();
     this.messageService.add({ key: 'toast', severity: 'error', summary: "Atenção!" , detail: "Ocorreu um erro inesperado." });
@@ -78,7 +78,7 @@ export class AulasComponent implements OnInit {
   finalizarAula(idEvento: any){
     this.eventoService.finalizarEvento(idEvento).subscribe((result: any) => {
       this.getAulasDocente(this.idDocente);
-      this.messageService.add({ key: 'toast', severity: 'success', summary: "Sucesso!" , detail: "Aula Finalizada!" });
+      this.messageService.add({ key: 'toast', severity: 'success', summary: "Sucesso!" , detail: "Evento Finalizado!" });
   }, err => {
     this.spinner.hide();
     this.messageService.add({ key: 'toast', severity: 'error', summary: "Atenção!" , detail: "Ocorreu um erro inesperado." });
@@ -89,7 +89,7 @@ export class AulasComponent implements OnInit {
   excluirAula(idEvento: any){
     this.eventoService.excluirEvento(idEvento).subscribe((result: any) => {
       this.getAulasDocente(this.idDocente);
-      this.messageService.add({ key: 'toast', severity: 'success', summary: "Sucesso!" , detail: "Aula Excluída!" });
+      this.messageService.add({ key: 'toast', severity: 'success', summary: "Sucesso!" , detail: "Evento Excluído!" });
   }, err => {
     this.spinner.hide();
     this.messageService.add({ key: 'toast', severity: 'error', summary: "Atenção!" , detail: "Ocorreu um erro inesperado." });
