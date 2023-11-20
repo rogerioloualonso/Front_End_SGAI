@@ -32,9 +32,8 @@ export class WelcomeAdminComponent implements OnInit {
     this.role = this.router.url;
   }
 
-  goTurmas(){
-    sessionStorage.setItem('idDiscente', this.discente.id);
-    this.router.navigate(['discente/turmas']);
+  goAmbiente(){
+    this.router.navigate(['admin/ambiente']);
   }
 
 }

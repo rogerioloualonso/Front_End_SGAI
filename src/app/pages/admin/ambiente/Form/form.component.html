@@ -1,0 +1,96 @@
+<div class="container-fullsize">
+  <div class="row justify-content-center mt-2">
+
+    <div class="col-12 col-md-6 col-lg-2 mb-5">
+      <button class="btn btn-outline-primary mt-2 w-100">Ambiente</button>
+      <button class="btn btn-outline-primary mt-2 w-100">Docente</button>
+      <button class="btn btn-outline-primary mt-2 w-100">Turma</button>
+      <button class="btn btn-outline-primary mt-2 w-100">Discente</button>
+      <button class="btn btn-outline-primary mt-2 w-100">Eventos</button>
+    </div>
+
+    <div *ngIf="idAmbiente == 0" class="col-12 col-md-6 col-lg-10 mb-2 pl-5">
+      <h1 class="text-center text-roboto">Novo Ambiente</h1>
+
+      <form class="p-5" role="form" [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup.value)">
+
+        <div class="form-group">
+          <label for="data">Nome</label>
+          <input type="text" class="form-control" formControlName="nome" id="nome" name="nome" style="width: 250px;">
+        </div>
+
+        <div class="form-group">
+          <label for="data">Descrição</label>
+          <input type="text" class="form-control" formControlName="descricao" id="descricao" name="descricao" style="width: 400px;">
+        </div>
+
+        <div class="form-group">
+          <label for="data">Capacidade</label>
+          <input type="text" class="form-control" formControlName="capacidade" id="capacidade" name="capacidade" style="width: 150px;">
+        </div>
+
+        <div class="form-group">
+          <label for="listaDinamica text-roboto">Tipo</label>
+          <select class="form-control" id="tipo" name="tipo" style="width: 400px;" formControlName="tipo">
+            <option value="" disabled selected>Selecione o tipo</option>
+            <option>Sala Interativa</option>
+            <option>Auditório</option>
+            <option>Sala comum</option>
+          </select>
+        </div>
+
+        <button class="btn btn-warning mt-3 mr-2" (click)="voltar()">
+          Voltar
+        </button>
+
+        <button type="submit" class="btn btn-primary mt-3"  [disabled]="!formGroup.valid">
+          Salvar
+          <i class="fas fa-paper-plane ml-2"></i>
+        </button>
+      </form>
+    </div>
+
+
+
+    <div *ngIf="idAmbiente > 0" class="col-12 col-md-6 col-lg-10 mb-2 pl-5">
+      <h1 class="text-center text-roboto">Editar Ambiente</h1>
+
+      <form class="p-5" role="form" [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup.value)">
+
+        <div class="form-group">
+          <label for="data">Nome</label>
+          <input type="text" class="form-control" formControlName="nome" id="nome" name="nome" style="width: 250px;">
+        </div>
+
+        <div class="form-group">
+          <label for="data">Descrição</label>
+          <input type="text" class="form-control" formControlName="descricao" id="descricao" name="descricao" style="width: 400px;">
+        </div>
+
+        <div class="form-group">
+          <label for="data">Capacidade</label>
+          <input type="text" class="form-control" formControlName="capacidade" id="capacidade" name="capacidade" style="width: 150px;">
+        </div>
+
+        <div class="form-group">
+          <label for="listaDinamica text-roboto">Tipo</label>
+          <select class="form-control" id="tipo" name="tipo" style="width: 400px;" formControlName="tipo">
+            <option value="" disabled selected>Selecione o tipo</option>
+            <option>Sala Interativa</option>
+            <option>Auditório</option>
+            <option>Sala comum</option>
+          </select>
+        </div>
+
+        <button class="btn btn-warning mt-3 mr-2" (click)="voltar()">
+          Voltar
+        </button>
+
+        <button class="btn btn-primary mt-3"  [disabled]="!formGroup.valid" (click)="atualizar()">
+          Atualizar
+          <i class="fas fa-paper-plane ml-2"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -14,6 +14,8 @@ import { MarcarPresencaComponent } from './pages/discente/presenca/marcarPresenc
 import { RatingComponent } from './pages/discente/presenca/rating/rating.component';
 import { ComentarioComponent } from './pages/discente/presenca/comentario/comentario.component';
 import { WelcomeAdminComponent } from './pages/admin/welcome/welcome.component';
+import { AmbienteComponent } from './pages/admin/ambiente/ambiente.component';
+import { FormAmbienteComponent } from './pages/admin/ambiente/Form/form.component';
 
 
 const routes: Routes = [
@@ -73,6 +75,12 @@ const routes: Routes = [
       },
       {
         path: 'welcome', component: WelcomeAdminComponent
+      },
+      {
+        path: 'ambiente', component: AmbienteComponent
+      },
+      {
+        path: 'ambiente/form', component: FormAmbienteComponent
       }
     ]
   },

@@ -31,6 +31,8 @@ import { MarcarPresencaComponent } from './pages/discente/presenca/marcarPresenc
 import { RatingComponent } from './pages/discente/presenca/rating/rating.component';
 import { ComentarioComponent } from './pages/discente/presenca/comentario/comentario.component';
 import { WelcomeAdminComponent } from './pages/admin/welcome/welcome.component';
+import { AmbienteComponent } from './pages/admin/ambiente/ambiente.component';
+import { FormAmbienteComponent } from './pages/admin/ambiente/Form/form.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +53,8 @@ import { WelcomeAdminComponent } from './pages/admin/welcome/welcome.component';
     RatingComponent,
     ComentarioComponent,
     WelcomeAdminComponent,
+    AmbienteComponent,
+    FormAmbienteComponent,
     Error403Component,
     Error404Component
   ],

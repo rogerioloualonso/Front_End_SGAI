@@ -6,7 +6,8 @@ export class Ambiente {
         public descricao?: string,
         public capacidade?: string,
         public tipo?: string,
-        public situacao?: string
+        public situacao?: string,
+        public createdAt?: Date
     ) { }
 
 
