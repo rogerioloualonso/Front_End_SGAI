@@ -1,0 +1,57 @@
+<div class="container-fullsize">
+  <div class="row justify-content-center mt-2">
+
+    <div class="col-12 col-md-6 col-lg-2 mb-5">
+      <button class="btn btn-outline-primary mt-2 w-100">Eventos</button>
+      <button class="btn btn-outline-primary mt-2 w-100" (click)="goTurmas()">Turmas</button>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-10 mb-5 mt-2">
+      <h1 class="text-center text-roboto">Seus eventos:</h1>
+
+      <div *ngIf="!aulas || aulas.length === 0" class="card mb-3 mt-5 ">
+        <div class="card-body d-flex flex-row w-10 justify-content-center">
+          Nenhum evento programado!  :/
+        </div>
+      </div>
+
+      <div *ngIf="aulas && aulas.length > 0" class="container mt-4">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col" class="w-10">Data</th>
+              <th scope="col" class="w-15">Ambiente</th>
+              <th scope="col" class="w-10">Turma</th>
+              <th scope="col" class="w-30">Inicio</th>
+              <th scope="col" class="w-30">Fim</th>
+              <th scope="col" class="w-30">Entrada</th>
+              <th scope="col" class="w-30">Saída</th>
+              <th scope="col">Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let aula of aulas">
+              <td>{{aula.data}}</td>
+              <td>{{aula.nomeAmbiente}}</td>
+              <td>{{aula.nomeTurma}}</td>
+              <td>{{aula.horaInicio}}</td>
+              <td>{{aula.horaFim}}</td>
+              <td>{{aula.entrada}}</td>
+              <td>{{aula.saida}}</td>
+
+
+              <td>
+                <button type="button" class="btn btn-success btn-sm mr-2" (click)="entrada(aula.idEvento)" title="Marcar Entrada">
+                  <i class="fa-solid fa-play"></i>
+                </button>
+                <button type="button" class="btn btn-danger btn-sm mr-2" (click)="goAvaliacao(aula.idPresenca)" title="Marcar Saída">
+                  <i class="fa-solid fa-stop"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

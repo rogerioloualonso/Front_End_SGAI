@@ -47,9 +47,9 @@ export class ListaTurmaDiscenteComponent implements OnInit {
     });
   }
 
-  goTurmas(){
+  goEventos(){
     sessionStorage.setItem('idDiscente', this.idDiscente);
-    this.router.navigate(['discente/turmas']);
+    this.router.navigate(['discente/aulas']);
   }
 
 }

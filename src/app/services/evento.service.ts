@@ -33,10 +33,30 @@ export class EventoService {
     return this.http.delete(`${environment.url_api}/evento/excluir/${id}`, id)
   }
 
+  public marcarEntrada(idEvento: any, idDiscente: any) {
+    return this.http.post(`${environment.url_api}/evento/entrada/${idEvento}/${idDiscente}`, idEvento)
+  }
+
+  public marcarSaida(data: any) {
+    return this.http.post(`${environment.url_api}/evento/saida`, data)
+  }
+
 
   public getEventoByDocente(idDocente: any) {
     return new Promise((resolve, reject) => {
-      this.http.get(`${environment.url_api}/evento/${idDocente}`).subscribe(
+      this.http.get(`${environment.url_api}/evento/byDocente/${idDocente}`).subscribe(
+        payload => {
+          resolve(payload)
+        }, err => {
+          reject(err.error.message);
+        }  
+      )
+    })
+  }
+
+  public getEventoByDiscente(idDiscente: any) {
+    return new Promise((resolve, reject) => {
+      this.http.get(`${environment.url_api}/evento/byDiscente/${idDiscente}`).subscribe(
         payload => {
           resolve(payload)
         }, err => {

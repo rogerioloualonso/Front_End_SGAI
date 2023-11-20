@@ -27,6 +27,9 @@ import { AgendamentoComponent } from './pages/docente/agendamento/agendamento.co
 import { AulasComponent } from './pages/docente/aulas/aulas.component';
 import { PresencaComponent } from './pages/docente/presenca/presenca.component';
 import { ListaTurmaDiscenteComponent } from './pages/discente/listaTurmas/ListaTurma.component';
+import { MarcarPresencaComponent } from './pages/discente/presenca/marcarPresenca.component';
+import { RatingComponent } from './pages/discente/presenca/rating/rating.component';
+import { ComentarioComponent } from './pages/discente/presenca/comentario/comentario.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +46,9 @@ import { ListaTurmaDiscenteComponent } from './pages/discente/listaTurmas/ListaT
     AulasComponent,
     ListaTurmaComponent,
     ListaTurmaDiscenteComponent,
+    MarcarPresencaComponent,
+    RatingComponent,
+    ComentarioComponent,
     Error403Component,
     Error404Component
   ],

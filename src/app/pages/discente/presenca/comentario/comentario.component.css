@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css?family=Public+Sans&display=swap');
+
+.text-roboto{
+  font-family: 'Roboto', sans-serif;
+}
+.card{
+  border-radius: 30px;
+  border-width: 2px;
+  border-color: #a5bad9 !important;
+}
+.ext-input {
+  font-size: 20px !important;
+  font-family: 'Public Sans', sans-serif !important;
+  text-align: justify;
+}
+.btn-outline-info{
+  padding: 6px 0;
+}
+.btn-outline-info:disabled{
+  filter: saturate(0)!important;
+  opacity: 0.4;
+}
+.card-header h3{
+  color: #fff!important;
+}
+@media(min-width: 768px){
+  .card{
+    max-width: 440px;
+    margin: 0 auto;
+  }
+}
+
+.container-fullsize{
+  min-height: calc(100vh - 198px);
+}
+
+/* Adicione isso ao seu arquivo de estilo CSS */
+.comentario-box textarea {
+  height: 100px; /* Ajuste a altura conforme necessário */
+  width: 500px;
+}
+
+.margin-personal{
+  margin-left: 100px !important;
+}

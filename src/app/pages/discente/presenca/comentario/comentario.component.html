@@ -1,0 +1,23 @@
+<!-- SeuComponente.component.html -->
+
+<div class="container-fullsize">
+  <div class="row justify-content-center mt-2">
+    <div class="col-12 col-md-6 col-lg-2 mb-5">
+      <button class="btn btn-outline-primary mt-2 w-100">Eventos</button>
+      <button class="btn btn-outline-primary mt-2 w-100">Turmas</button>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-10 mb-5 mt-2">
+      <h1 class="text-center text-roboto mb-4">Deseja enviar um comentário?</h1>
+
+      <div class="margin-personal ml-5">
+        <div class="form-group comentario-box margin-personal">
+          <textarea class="form-control" id="comentario" rows="3" [(ngModel)]="comentario"></textarea>
+        </div>
+        
+        <button class="btn btn-primary margin-personal" (click)="salvar()">Enviar</button>
+      </div>
+      
+    </div>
+  </div>
+</div>
