@@ -2,15 +2,15 @@
   <div class="row justify-content-center mt-2">
 
     <div class="col-12 col-md-6 col-lg-2 mb-5">
-      <button class="btn btn-outline-primary mt-2 w-100">Ambiente</button>
-      <button class="btn btn-outline-primary mt-2 w-100" (click)="goDocente()">Docente</button>
+      <button class="btn btn-outline-primary mt-2 w-100" (click)="goAmbiente()">Ambiente</button>
+      <button class="btn btn-outline-primary mt-2 w-100">Docente</button>
       <button class="btn btn-outline-primary mt-2 w-100" (click)="goTurmas()">Turma</button>
       <button class="btn btn-outline-primary mt-2 w-100" (click)="goTurmas()">Discente</button>
       <button class="btn btn-outline-primary mt-2 w-100" (click)="goTurmas()">Eventos</button>
     </div>
 
     <div class="col-12 col-md-6 col-lg-10 mb-5 mt-2">
-      <h1 class="text-center text-roboto">Seus ambientes:</h1>
+      <h1 class="text-center text-roboto">Docentes</h1>
 
       <div class="d-flex justify-content-end mb-2 mr-5">
         <button type="button" class="btn btn-success btn-sm" (click)="goAdicionar()" title="Adicionar">
@@ -18,37 +18,35 @@
         </button>
       </div>
       
-      <div *ngIf="!ambientes || ambientes.length === 0" class="card mb-3 mt-5 ">
+      <div *ngIf="!docentes || docentes.length === 0" class="card mb-3 mt-5 ">
         <div class="card-body d-flex flex-row w-10 justify-content-center">
-          Nenhum Ambiente cadastrado!  :/
+          Nenhum Docente cadastrado!  :/
         </div>
       </div>
 
-      <div *ngIf="ambientes && ambientes.length > 0" class="container mt-4">
+      <div *ngIf="docentes && docentes.length > 0" class="container mt-4">
         <table class="table">
           <thead>
             <tr>
               <th scope="col" class="w-10 text-center">Nome</th>
-              <th scope="col" class="w-15 text-center">Descricao</th>
-              <th scope="col" class="w-10 text-center">Capacidade</th>
-              <th scope="col" class="w-30 text-center">Tipo</th>
-              <th scope="col" class="w-30 text-center">Situação</th>
+              <th scope="col" class="w-15 text-center">CPF</th>
+              <th scope="col" class="w-10 text-center">Telefone</th>
+              <th scope="col" class="w-30 text-center">Matrícula</th>
               <th scope="col" class="text-center">Ações</th>
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let ambiente of ambientes">
-              <td class="text-center">{{ambiente.nome}}</td>
-              <td class="text-center">{{ambiente.descricao}}</td>
-              <td class="text-center">{{ambiente.capacidade}}</td>
-              <td class="text-center">{{ambiente.tipo}}</td>
-              <td class="text-center">{{ambiente.situacao}}</td>
+            <tr *ngFor="let docente of docentes">
+              <td class="text-center">{{docente.nome}}</td>
+              <td class="text-center">{{docente.cpf}}</td>
+              <td class="text-center">{{docente.telefone}}</td>
+              <td class="text-center">{{docente.matricula}}</td>
 
               <td class="text-center">
-                <button type="button" class="btn btn-warning btn-sm mr-2" (click)="goEditar(ambiente.id)" title="Editar">
+                <button type="button" class="btn btn-warning btn-sm mr-2" (click)="goEditar(docente.id)" title="Editar">
                   <i class="fa-solid fa-pencil"></i>
                 </button>
-                <button type="button" class="btn btn-danger btn-sm mr-2" (click)="excluir(ambiente.id, ambiente)" title="Excluir">
+                <button type="button" class="btn btn-danger btn-sm mr-2" (click)="excluir(docente.id, ambiente)" title="Excluir">
                   <i class="fa-solid fa-trash"></i>
                 </button>
               </td>

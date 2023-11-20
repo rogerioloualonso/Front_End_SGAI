@@ -7,6 +7,8 @@ export class Docente {
         public telefone?: string,
         public matricula?: string,
         public turma?: string,
+        public senha?: string,
+        public createdAt?: string
     ) { }
 
 

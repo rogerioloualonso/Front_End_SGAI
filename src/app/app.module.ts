@@ -33,6 +33,8 @@ import { ComentarioComponent } from './pages/discente/presenca/comentario/coment
 import { WelcomeAdminComponent } from './pages/admin/welcome/welcome.component';
 import { AmbienteComponent } from './pages/admin/ambiente/ambiente.component';
 import { FormAmbienteComponent } from './pages/admin/ambiente/Form/form.component';
+import { DocenteComponent } from './pages/admin/docente/docente.component';
+import { FormDocenteComponent } from './pages/admin/docente/form/form.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +57,8 @@ import { FormAmbienteComponent } from './pages/admin/ambiente/Form/form.componen
     WelcomeAdminComponent,
     AmbienteComponent,
     FormAmbienteComponent,
+    DocenteComponent,
+    FormDocenteComponent,
     Error403Component,
     Error404Component
   ],

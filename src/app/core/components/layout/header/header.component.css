@@ -1,3 +1,7 @@
 header{
     background-color: #a5bad9 !important;
 }
+
+header {
+    background: linear-gradient(to bottom, #4682b4, #FFFFFF); /* Substitua as cores pelo seu degradê desejado */
+  }
