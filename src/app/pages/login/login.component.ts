@@ -89,6 +89,16 @@ export class LoginComponent implements OnInit {
         this.messageService.add({ key: 'toast', severity: 'error', summary: "Atenção!" , detail: "Ocorreu um erro inesperado." });
         this.formGroup.reset();
       })
+    }else{
+      if(this.creds.cpf == "123" && this.creds.senha == "123"){
+          sessionStorage.setItem('user', 'admin');
+          this.spinner.hide();
+          this.router.navigate(['welcome'], { relativeTo: this.route });
+      }else{
+          this.spinner.hide();
+          this.messageService.add({ key: 'toast', severity: 'error', summary: "Atenção!" , detail: "Verifique suas credenciais e tente novamente." });
+        
+      }
     }
     
   }

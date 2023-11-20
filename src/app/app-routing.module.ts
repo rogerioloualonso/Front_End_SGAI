@@ -13,6 +13,7 @@ import { ListaTurmaDiscenteComponent } from './pages/discente/listaTurmas/ListaT
 import { MarcarPresencaComponent } from './pages/discente/presenca/marcarPresenca.component';
 import { RatingComponent } from './pages/discente/presenca/rating/rating.component';
 import { ComentarioComponent } from './pages/discente/presenca/comentario/comentario.component';
+import { WelcomeAdminComponent } from './pages/admin/welcome/welcome.component';
 
 
 const routes: Routes = [
@@ -61,6 +62,17 @@ const routes: Routes = [
       },
       {
         path: 'aulas/presenca', component: PresencaComponent,
+      }
+    ]
+  },
+  {
+    path: 'admin',
+    children: [
+      {
+        path: '', component: LoginComponent
+      },
+      {
+        path: 'welcome', component: WelcomeAdminComponent
       }
     ]
   },

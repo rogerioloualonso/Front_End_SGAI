@@ -30,6 +30,7 @@ import { ListaTurmaDiscenteComponent } from './pages/discente/listaTurmas/ListaT
 import { MarcarPresencaComponent } from './pages/discente/presenca/marcarPresenca.component';
 import { RatingComponent } from './pages/discente/presenca/rating/rating.component';
 import { ComentarioComponent } from './pages/discente/presenca/comentario/comentario.component';
+import { WelcomeAdminComponent } from './pages/admin/welcome/welcome.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { ComentarioComponent } from './pages/discente/presenca/comentario/coment
     MarcarPresencaComponent,
     RatingComponent,
     ComentarioComponent,
+    WelcomeAdminComponent,
     Error403Component,
     Error404Component
   ],
