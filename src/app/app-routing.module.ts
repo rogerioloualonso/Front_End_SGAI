@@ -18,6 +18,8 @@ import { AmbienteComponent } from './pages/admin/ambiente/ambiente.component';
 import { FormAmbienteComponent } from './pages/admin/ambiente/Form/form.component';
 import { DocenteComponent } from './pages/admin/docente/docente.component';
 import { FormDocenteComponent } from './pages/admin/docente/form/form.component';
+import { DiscenteComponent } from './pages/admin/discente/discente.component';
+import { FormDiscenteComponent } from './pages/admin/discente/form/form.component';
 
 
 const routes: Routes = [
@@ -89,6 +91,11 @@ const routes: Routes = [
       },
       {
         path: 'docente/form', component: FormDocenteComponent
+      },{
+        path: 'discente', component: DiscenteComponent
+      },
+      {
+        path: 'discente/form', component: FormDiscenteComponent
       }
     ]
   },

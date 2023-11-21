@@ -73,4 +73,16 @@ export class AmbienteComponent implements OnInit {
     this.router.navigate(['admin/docente']);
   }
 
+  goDiscente(){
+    this.router.navigate(['admin/discente']);
+  }
+
+  goTurma(){
+    this.router.navigate(['admin/turma']);
+  }
+
+  goEvento(){
+    this.router.navigate(['admin/evento']);
+  }
+
 }
