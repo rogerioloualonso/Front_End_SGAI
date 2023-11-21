@@ -45,6 +45,13 @@ export class AvaliacaoComponent implements OnInit {
   getAvaliacaoByEvento(idEvento: any) {
     this.avaliacaoService.getAvaliacaoByTurma(idEvento).then((avaliacoes: Avaliacao[]) => {
       this.avaliacoes = avaliacoes;
+
+      for (let i = 0; i < this.avaliacoes.length; i++) {
+        this.avaliacoes[i].ratingArray = [];
+        for (let j = 0; j < this.avaliacoes[i].rating; j++) {
+          this.avaliacoes[i].ratingArray.push(j);
+        }
+      }
     }).catch(err => {
       this.router.navigate(['/error-sessao']);
     });

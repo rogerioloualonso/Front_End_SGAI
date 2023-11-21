@@ -28,7 +28,11 @@
           </thead>
           <tbody>
             <tr *ngFor="let avaliacao of avaliacoes">
-              <td class="text-center">{{avaliacao.rating}}</td>
+              <td class="text-center">
+                <span *ngFor="let rating of avaliacao.ratingArray">
+                  <span class="fa fa-star"></span>
+                </span>
+              </td>
               <td class="text-center">{{avaliacao.justificativa}}</td>
             </tr>
           </tbody>

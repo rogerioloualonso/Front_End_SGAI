@@ -33,3 +33,20 @@
 .container-fullsize{
   min-height: calc(100vh - 198px);
 }
+
+
+.rating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fa-star {
+  font-size: 20px;
+  color: #FFD700; /* Cor das estrelas */
+}
+
+.fa-star:hover,
+.fa-star:hover ~ .fa-star {
+  color: #FFD700; /* Cor das estrelas ao passar o mouse */
+}
