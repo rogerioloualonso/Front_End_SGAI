@@ -10,15 +10,16 @@ import { AmbienteService } from 'src/app/services/ambiente.service';
 import { Ambiente } from 'src/app/models/ambiente.model';
 import { Docente } from 'src/app/models/docente.model';
 import { DocenteService } from 'src/app/services/docente.service';
+import { Turma } from 'src/app/models/turma.model';
 import { DiscenteService } from 'src/app/services/discente.service';
-import { Discente } from 'src/app/models/discente.model';
+import { TurmaService } from 'src/app/services/turma.service';
 
 @Component({
-  selector: 'app-discente',
-  templateUrl: './discente.component.html',
-  styleUrls: ['./discente.component.css'],
+  selector: 'app-turma',
+  templateUrl: './turma.component.html',
+  styleUrls: ['./turma.component.css'],
 })
-export class DiscenteComponent implements OnInit {
+export class TurmaComponent implements OnInit {
   @Input() mensagem: string;
   formGroup: FormGroup;
   sessaoExpirou: boolean
@@ -26,36 +27,35 @@ export class DiscenteComponent implements OnInit {
   loadModal: boolean = false;
 
   role: any;
-  idDiscente:any;
-  discentes: any;
+  turmas: any;
 
   constructor(
     protected router: Router,
     public route: ActivatedRoute,
     private spinner: NgxSpinnerService,
     protected messageService: MessageService,
-    private discenteService: DiscenteService
+    private turmaService: TurmaService
   ) {
 
   }
 
   ngOnInit() {
     this.role = this.router.url;
-    this.getDiscetes();
+    this.getDocentes();
   }
 
-  getDiscetes() {
-    this.discenteService.getAllDiscentes().then((discentes: Discente[]) => {
-      this.discentes = discentes;
+  getDocentes() {
+    this.turmaService.getAllTurmas().then((turmas: Turma[]) => {
+      this.turmas = turmas;
     }).catch(err => {
       this.router.navigate(['/error-sessao']);
     });
   }
 
-  excluir(idAmbiente: any){
-    this.discenteService.excluir(idAmbiente).subscribe((result: any) => {
-      this.getDiscetes();
-      this.messageService.add({ key: 'toast', severity: 'success', summary: "Sucesso!" , detail: "Discente Excluído!" });
+  excluir(idTurma: any){
+    this.turmaService.excluir(idTurma).subscribe((result: any) => {
+      this.getDocentes();
+      this.messageService.add({ key: 'toast', severity: 'success', summary: "Sucesso!" , detail: "Turma Excluída!" });
   }, err => {
     this.spinner.hide();
     this.messageService.add({ key: 'toast', severity: 'error', summary: "Atenção!" , detail: "Ocorreu um erro inesperado." });
@@ -64,26 +64,30 @@ export class DiscenteComponent implements OnInit {
   }
 
   goAdicionar(){
-    sessionStorage.setItem('idDiscente', "0");
-    this.router.navigate(['admin/discente/form']);
+    sessionStorage.setItem('idTurma', "0");
+    this.router.navigate(['admin/turma/form']);
   }
 
-  goEditar(idDiscente: any, docente: any){
-    sessionStorage.setItem('idDiscente', idDiscente);
-    sessionStorage.setItem('discente', docente);
-    this.router.navigate(['admin/discente/form']);
+  goEditar(idTurma: any, turma: any){
+    sessionStorage.setItem('idTurma', idTurma);
+    sessionStorage.setItem('turma', turma);
+    this.router.navigate(['admin/turma/form']);
   }
 
   goAmbiente(){
     this.router.navigate(['admin/ambiente']);
   }
 
-  goDocente(){
-    this.router.navigate(['admin/docente']);
+  goDiscente(){
+    this.router.navigate(['admin/discente']);
   }
 
-  goTurma(){
-    this.router.navigate(['admin/turma']);
+  goEvento(){
+    this.router.navigate(['admin/evento']);
+  }
+
+  goDocente(){
+    this.router.navigate(['admin/docente']);
   }
 
 }

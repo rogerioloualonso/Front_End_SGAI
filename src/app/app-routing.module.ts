@@ -20,6 +20,8 @@ import { DocenteComponent } from './pages/admin/docente/docente.component';
 import { FormDocenteComponent } from './pages/admin/docente/form/form.component';
 import { DiscenteComponent } from './pages/admin/discente/discente.component';
 import { FormDiscenteComponent } from './pages/admin/discente/form/form.component';
+import { TurmaComponent } from './pages/admin/turma/turma.component';
+import { FormTurmaComponent } from './pages/admin/turma/form/form.component';
 
 
 const routes: Routes = [
@@ -91,11 +93,18 @@ const routes: Routes = [
       },
       {
         path: 'docente/form', component: FormDocenteComponent
-      },{
+      },
+      {
         path: 'discente', component: DiscenteComponent
       },
       {
         path: 'discente/form', component: FormDiscenteComponent
+      },
+      {
+        path: 'turma', component: TurmaComponent
+      },
+      {
+        path: 'turma/form', component: FormTurmaComponent
       }
     ]
   },

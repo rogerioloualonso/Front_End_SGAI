@@ -5,6 +5,7 @@ import { Credencias } from '../models/credencias.model';
 import { environment } from '../../environments/environment';
 import { LoginComponent } from '../pages/login/login.component';
 import { WelcomeDocenteComponent } from '../pages/docente/welcome/welcome.component';
+import { Turma } from '../models/turma.model';
 
 @Injectable({
   providedIn: 'root'
@@ -40,6 +41,42 @@ export class TurmaService {
         }  
       )
     })
+  }
+
+  public getTurmaById(id: any) {
+    return new Promise((resolve, reject) => {
+      this.http.get(`${environment.url_api}/turma/byId/${id}`).subscribe(
+        payload => {
+          resolve(payload)
+        }, err => {
+          reject(err.error.message);
+        }  
+      )
+    })
+  }
+
+  public getAllTurmas() {
+    return new Promise((resolve, reject) => {
+      this.http.get(`${environment.url_api}/turma/all`).subscribe(
+        payload => {
+          resolve(payload)
+        }, err => {
+          reject(err.error.message);
+        }  
+      )
+    })
+  }
+
+  public excluir(id: any) {
+    return this.http.delete(`${environment.url_api}/turma/excluir/${id}`, id)
+  }
+
+  public salvarTurma(data: Turma) {
+    return this.http.post(`${environment.url_api}/turma`, data)
+  }
+
+  public atualizarTurma(data: Turma) {
+    return this.http.post(`${environment.url_api}/turma/atualizar`, data)
   }
 
 }

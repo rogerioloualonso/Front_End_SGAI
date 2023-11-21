@@ -37,6 +37,8 @@ import { DocenteComponent } from './pages/admin/docente/docente.component';
 import { FormDocenteComponent } from './pages/admin/docente/form/form.component';
 import { DiscenteComponent } from './pages/admin/discente/discente.component';
 import { FormDiscenteComponent } from './pages/admin/discente/form/form.component';
+import { TurmaComponent } from './pages/admin/turma/turma.component';
+import { FormTurmaComponent } from './pages/admin/turma/form/form.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +65,8 @@ import { FormDiscenteComponent } from './pages/admin/discente/form/form.componen
     FormDocenteComponent,
     DiscenteComponent,
     FormDiscenteComponent,
+    TurmaComponent,
+    FormTurmaComponent,
     Error403Component,
     Error404Component
   ],
