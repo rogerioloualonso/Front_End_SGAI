@@ -3,8 +3,6 @@ import { Component, Input, OnInit} from '@angular/core';
 import { FormGroup} from '@angular/forms';
 
 import { MessageService } from 'primeng/api';
-import { Turma } from 'src/app/models/turma.model';
-import { TurmaService } from 'src/app/services/turma.service';
 import { PresencaService } from 'src/app/services/presenca.service';
 import { Presenca } from 'src/app/models/Presenca.model';
 

@@ -16,8 +16,6 @@ import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
 import { Error403Component } from './pages/error/error403/error403.component';
 import { Error404Component } from './pages/error/error404/error404.component';
-import { Utils } from './utils/utils';
-import { SharedUtil } from './utils/SharedUtil';
 import { LoginComponent } from './pages/login/login.component';
 import { WelcomeDiscenteComponent } from './pages/discente/welcome/welcome.component';
 import { WelcomeDocenteComponent } from './pages/docente/welcome/welcome.component';
@@ -94,8 +92,6 @@ import { AvaliacaoComponent } from './pages/admin/evento/avaliacao/avaliacao.com
     MessageService,
     TurmaService,
     ToastModule,
-    Utils,
-    SharedUtil
   ],
   bootstrap: [AppComponent]
 })

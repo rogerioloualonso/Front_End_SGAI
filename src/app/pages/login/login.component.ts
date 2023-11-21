@@ -3,7 +3,6 @@ import { Component, Input, OnInit} from '@angular/core';
 import { FormGroup, FormBuilder, Validators} from '@angular/forms';
 
 import { MessageService } from 'primeng/api';
-import { HttpClient } from '@angular/common/http';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { LoginService } from 'src/app/services/login.service';
 import { Credencias } from 'src/app/models/credencias.model';

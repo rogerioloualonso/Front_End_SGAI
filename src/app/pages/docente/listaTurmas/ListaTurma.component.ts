@@ -3,8 +3,6 @@ import { Component, Input, OnInit} from '@angular/core';
 import { FormGroup, FormBuilder, Validators} from '@angular/forms';
 
 import { MessageService } from 'primeng/api';
-import { HttpClient } from '@angular/common/http';
-import { NgxSpinnerService } from 'ngx-spinner';
 import { Turma } from 'src/app/models/turma.model';
 import { TurmaService } from 'src/app/services/turma.service';
 

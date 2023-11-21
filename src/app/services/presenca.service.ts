@@ -1,9 +1,7 @@
 
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Credencias } from '../models/credencias.model';
 import { environment } from '../../environments/environment';
-import { LoginComponent } from '../pages/login/login.component';
 import { WelcomeDocenteComponent } from '../pages/docente/welcome/welcome.component';
 
 @Injectable({

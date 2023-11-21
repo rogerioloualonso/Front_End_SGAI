@@ -3,13 +3,7 @@ import { Component, Input, OnInit} from '@angular/core';
 import { FormGroup, FormBuilder, Validators} from '@angular/forms';
 
 import { MessageService } from 'primeng/api';
-import { HttpClient } from '@angular/common/http';
 import { NgxSpinnerService } from 'ngx-spinner';
-import { EventoService } from 'src/app/services/evento.service';
-import { AmbienteService } from 'src/app/services/ambiente.service';
-import { Ambiente } from 'src/app/models/ambiente.model';
-import { Docente } from 'src/app/models/docente.model';
-import { DocenteService } from 'src/app/services/docente.service';
 import { DiscenteService } from 'src/app/services/discente.service';
 import { Discente } from 'src/app/models/discente.model';
 

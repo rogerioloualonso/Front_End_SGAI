@@ -3,7 +3,6 @@ import { Component, Input, OnInit} from '@angular/core';
 import { FormGroup, FormBuilder, Validators} from '@angular/forms';
 
 import { MessageService } from 'primeng/api';
-import { HttpClient } from '@angular/common/http';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { AmbienteService } from 'src/app/services/ambiente.service';
 import { Ambiente } from 'src/app/models/ambiente.model';
