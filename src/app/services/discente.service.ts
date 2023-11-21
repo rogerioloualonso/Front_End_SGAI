@@ -41,6 +41,18 @@ export class DiscenteService {
     })
   }
 
+  public getDiscenteByTurma(id: any) {
+    return new Promise((resolve, reject) => {
+      this.http.get(`${environment.url_api}/discente/byTurma/${id}`).subscribe(
+        payload => {
+          resolve(payload)
+        }, err => {
+          reject(err.error.message);
+        }  
+      )
+    })
+  }
+
   public getAllDiscentes() {
     return new Promise((resolve, reject) => {
       this.http.get(`${environment.url_api}/discente/all`).subscribe(

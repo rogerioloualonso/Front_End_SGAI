@@ -9,6 +9,7 @@ export class Discente {
         public turma?: string,
         public senha?: string,
         public createdAt?: string,
+        public idTurma?: string,
     ) { }
 
 

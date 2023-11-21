@@ -6,6 +6,7 @@ import { environment } from '../../environments/environment';
 import { LoginComponent } from '../pages/login/login.component';
 import { WelcomeDocenteComponent } from '../pages/docente/welcome/welcome.component';
 import { Turma } from '../models/turma.model';
+import { Discente } from '../models/discente.model';
 
 @Injectable({
   providedIn: 'root'
@@ -77,6 +78,14 @@ export class TurmaService {
 
   public atualizarTurma(data: Turma) {
     return this.http.post(`${environment.url_api}/turma/atualizar`, data)
+  }
+
+  public incluirDiscenteTurma(data: Discente) {
+    return this.http.post(`${environment.url_api}/turma/incluir`, data)
+  }
+
+  public removerDiscenteTurma(data: Discente) {
+    return this.http.post(`${environment.url_api}/turma/remover`, data)
   }
 
 }
