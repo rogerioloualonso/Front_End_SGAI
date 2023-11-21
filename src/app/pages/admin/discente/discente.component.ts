@@ -86,4 +86,8 @@ export class DiscenteComponent implements OnInit {
     this.router.navigate(['admin/turma']);
   }
 
+  goEvento(){
+    this.router.navigate(['admin/evento']);
+  }
+
 }
