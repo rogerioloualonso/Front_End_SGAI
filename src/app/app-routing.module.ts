@@ -24,6 +24,8 @@ import { TurmaComponent } from './pages/admin/turma/turma.component';
 import { FormTurmaComponent } from './pages/admin/turma/form/form.component';
 import { listaDiscenteComponent } from './pages/admin/turma/listaDiscentes/listaDiscente.component';
 import { buscarDiscenteComponent } from './pages/admin/turma/buscarDiscente/buscarDiscente.component';
+import { EventoComponent } from './pages/admin/evento/evento.component';
+import { AvaliacaoComponent } from './pages/admin/evento/avaliacao/avaliacao.component';
 
 
 const routes: Routes = [
@@ -113,6 +115,12 @@ const routes: Routes = [
       },
       {
         path: 'turma/discentes/adicionar', component: buscarDiscenteComponent
+      },
+      {
+        path: 'evento', component: EventoComponent
+      },
+      {
+        path: 'evento/avaliacao', component: AvaliacaoComponent
       }
     ]
   },

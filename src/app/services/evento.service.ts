@@ -29,6 +29,14 @@ export class EventoService {
     return this.http.post(`${environment.url_api}/evento/finalizar/${id}`, id)
   }
 
+  public aprovarEvento(id: any) {
+    return this.http.post(`${environment.url_api}/evento/aprovar/${id}`, id)
+  }
+
+  public reprovarEvento(id: any) {
+    return this.http.post(`${environment.url_api}/evento/reprovar/${id}`, id)
+  }
+
   public excluirEvento(id: any) {
     return this.http.delete(`${environment.url_api}/evento/excluir/${id}`, id)
   }
@@ -57,6 +65,18 @@ export class EventoService {
   public getEventoByDiscente(idDiscente: any) {
     return new Promise((resolve, reject) => {
       this.http.get(`${environment.url_api}/evento/byDiscente/${idDiscente}`).subscribe(
+        payload => {
+          resolve(payload)
+        }, err => {
+          reject(err.error.message);
+        }  
+      )
+    })
+  }
+
+  public getAllEventos() {
+    return new Promise((resolve, reject) => {
+      this.http.get(`${environment.url_api}/evento/all`).subscribe(
         payload => {
           resolve(payload)
         }, err => {

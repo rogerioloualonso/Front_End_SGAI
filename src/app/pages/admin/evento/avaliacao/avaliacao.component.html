@@ -1,0 +1,39 @@
+<div class="container-fullsize">
+  <div class="row justify-content-center mt-2">
+
+    <div class="col-12 col-md-6 col-lg-2 mb-5">
+      <button class="btn btn-outline-primary mt-2 w-100" (click)="goAmbiente()">Ambiente</button>
+      <button class="btn btn-outline-primary mt-2 w-100" (click)="goDocente()">Docente</button>
+      <button class="btn btn-outline-primary mt-2 w-100" (click)="goTurma()">Turma</button>
+      <button class="btn btn-outline-primary mt-2 w-100" (click)="goDiscente()">Discente</button>
+      <button class="btn btn-outline-primary mt-2 w-100" (click)="goEvento()">Eventos</button>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-10 mb-5 mt-2">
+      <h1 class="text-center text-roboto">Avaliações</h1>
+
+      <div *ngIf="!avaliacoes || avaliacoes.length === 0" class="card mb-3 mt-5 ">
+        <div class="card-body d-flex flex-row w-10 justify-content-center">
+          Nenhuma avaliação para este evento!  :/
+        </div>
+      </div>
+
+      <div *ngIf="avaliacoes && avaliacoes.length > 0" class="container mt-4">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col" class="w-10 text-center">Rating</th>
+              <th scope="col" class="w-15 text-center">Comentário</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let avaliacao of avaliacoes">
+              <td class="text-center">{{avaliacao.rating}}</td>
+              <td class="text-center">{{avaliacao.justificativa}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

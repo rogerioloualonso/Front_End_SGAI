@@ -41,6 +41,8 @@ import { TurmaComponent } from './pages/admin/turma/turma.component';
 import { FormTurmaComponent } from './pages/admin/turma/form/form.component';
 import { listaDiscenteComponent } from './pages/admin/turma/listaDiscentes/listaDiscente.component';
 import { buscarDiscenteComponent } from './pages/admin/turma/buscarDiscente/buscarDiscente.component';
+import { EventoComponent } from './pages/admin/evento/evento.component';
+import { AvaliacaoComponent } from './pages/admin/evento/avaliacao/avaliacao.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +73,8 @@ import { buscarDiscenteComponent } from './pages/admin/turma/buscarDiscente/busc
     FormTurmaComponent,
     listaDiscenteComponent,
     buscarDiscenteComponent,
+    EventoComponent,
+    AvaliacaoComponent,
     Error403Component,
     Error404Component
   ],

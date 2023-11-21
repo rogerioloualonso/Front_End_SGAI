@@ -1,0 +1,66 @@
+<div class="container-fullsize">
+  <div class="row justify-content-center mt-2">
+
+    <div class="col-12 col-md-6 col-lg-2 mb-5">
+      <button class="btn btn-outline-primary mt-2 w-100" (click)="goAmbiente()">Ambiente</button>
+      <button class="btn btn-outline-primary mt-2 w-100" (click)="goDocente()">Docente</button>
+      <button class="btn btn-outline-primary mt-2 w-100" (click)="goTurma()">Turma</button>
+      <button class="btn btn-outline-primary mt-2 w-100" (click)="goDiscente()">Discente</button>
+      <button class="btn btn-outline-primary mt-2 w-100">Eventos</button>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-10 mb-5 mt-2">
+      <h1 class="text-center text-roboto">Eventos</h1>
+
+      <div *ngIf="!eventos || eventos.length === 0" class="card mb-3 mt-5 ">
+        <div class="card-body d-flex flex-row w-10 justify-content-center">
+          Nenhum evento agendado!  :/
+        </div>
+      </div>
+
+      <div *ngIf="eventos && eventos.length > 0" class="container mt-4">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col" class="w-10 text-center">Data</th>
+              <th scope="col" class="w-15 text-center">Ambiente</th>
+              <th scope="col" class="w-10 text-center">Turma</th>
+              <th scope="col" class="w-30 text-center">Inicio</th>
+              <th scope="col" class="w-30 text-center">Fim</th>
+              <th scope="col" class="text-center">Situacao</th>
+              <th scope="col" class="text-center">Ações</th>
+              <th scope="col" class="text-center">Relatórios</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let evento of eventos">
+              <td class="text-center">{{evento.data}}</td>
+              <td class="text-center">{{evento.nomeAmbiente}}</td>
+              <td class="text-center">{{evento.nomeTurma}}</td>
+              <td class="text-center">{{evento.horaInicio}}</td>
+              <td class="text-center">{{evento.horaFim}}</td>
+              <td class="text-center">{{evento.situacao}}</td>
+
+              <td class="text-center">
+                <button type="button" class="btn btn-success btn-sm mr-2" (click)="aprovarEvento(evento.id)" title="Aprovar Evento">
+                  <i class="fa-solid fa-check"></i>
+                </button>
+                <button type="button" class="btn btn-warning btn-sm mr-2" (click)="reprovarEvento(evento.id)" title="Reprovar Evento">
+                  <i class="fa-solid fa-ban"></i>
+                </button>
+                <button type="button" class="btn btn-danger btn-sm" (click)="excluirEvento(evento.id)" title="Excluir Evento">
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+              </td>
+              <td class="text-center">
+                <button type="button" class="btn btn-success btn-sm text-center" (click)="goAvaliacao(evento.id)"  title="Relatório de avaliações">
+                  <i class="fa-regular fa-file-powerpoint"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
