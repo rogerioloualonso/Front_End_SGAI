@@ -42,13 +42,15 @@
 
 .fa-star {
   font-size: 50px;
-  color: #FFD700; /* Cor das estrelas */
+  color: #c9c187; 
   cursor: pointer;
 }
 
 .fa-star:hover,
 .fa-star:hover ~ .fa-star {
-  color: #FFD700; /* Cor das estrelas ao passar o mouse */
+  color: #FFD700;
+  border-color: #FFD700;
+  border-width: 5px;
 }
 
 .fa-star[data-rating="1"],
@@ -56,5 +58,5 @@
 .fa-star[data-rating="3"],
 .fa-star[data-rating="4"],
 .fa-star[data-rating="5"] {
-  color: #FFD700; /* Cor das estrelas selecionadas */
+  color: #FFD700; 
 }
