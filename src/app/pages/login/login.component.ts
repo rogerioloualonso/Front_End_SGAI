@@ -89,7 +89,7 @@ export class LoginComponent implements OnInit {
         this.formGroup.reset();
       })
     }else{
-      if(this.creds.cpf == "123" && this.creds.senha == "123"){
+      if(this.creds.cpf == "75960209098" && this.creds.senha == "senha123"){
           sessionStorage.setItem('user', 'admin');
           this.spinner.hide();
           this.router.navigate(['welcome'], { relativeTo: this.route });
