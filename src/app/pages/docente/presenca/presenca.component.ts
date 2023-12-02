@@ -43,7 +43,7 @@ export class PresencaComponent implements OnInit {
   }
 
   getPresencas(idAula: any) {
-    this.presencaService.getPresencaByIdDiscnte(idAula).then((presencas: Presenca[]) => {
+    this.presencaService.getPresencaByIdEvento(idAula).then((presencas: Presenca[]) => {
       this.presencas = presencas;
     }).catch(err => {
       this.router.navigate(['/error-sessao']);

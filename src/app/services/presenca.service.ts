@@ -16,9 +16,21 @@ export class PresencaService {
     private http: HttpClient
   ) { }
        
-  public getPresencaByIdDiscnte(id: any) {
+  public getPresencaByIdDiscente(id: any) {
     return new Promise((resolve, reject) => {
       this.http.get(`${environment.url_api}/presenca/byDiscente/${id}`).subscribe(
+        payload => {
+          resolve(payload)
+        }, err => {
+          reject(err.error.message);
+        }  
+      )
+    })
+  }
+
+  public getPresencaByIdEvento(id: any) {
+    return new Promise((resolve, reject) => {
+      this.http.get(`${environment.url_api}/presenca/byEvento/${id}`).subscribe(
         payload => {
           resolve(payload)
         }, err => {
