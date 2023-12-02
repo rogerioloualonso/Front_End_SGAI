@@ -90,7 +90,7 @@ export class AgendamentoComponent implements OnInit {
     this.data.data = this.formGroup.get('data').value;
     this.data.horaInicio = this.formGroup.get('horaInicio').value + ":00";
     this.data.horaFim = this.formGroup.get('horaFim').value + ":00";
-    this.data.situacao = "Criada";
+    this.data.situacao = "CRIADO";
 
     this.eventoService.salvarEvento(this.data).subscribe((result: any) => {
         this.spinner.hide();

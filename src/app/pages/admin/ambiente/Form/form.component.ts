@@ -85,7 +85,7 @@ export class FormAmbienteComponent implements OnInit {
     this.data.descricao = this.formGroup.get('descricao').value;
     this.data.capacidade = this.formGroup.get('capacidade').value;
     this.data.tipo = this.formGroup.get('tipo').value;
-    this.data.situacao = "Ativa";
+    this.data.situacao = "ATIVO";
 
     this.ambienteService.salvarAmbiente(this.data).subscribe((result: any) => {
         this.spinner.hide();

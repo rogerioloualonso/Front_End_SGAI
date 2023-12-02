@@ -93,7 +93,7 @@ export class FormTurmaComponent implements OnInit {
     this.data.nome = this.formGroup.get('nome').value;
     this.data.turno = this.formGroup.get('turno').value;
     this.data.idDocente = this.formGroup.get('docente').value;
-    this.data.situacao = "Ativa";
+    this.data.situacao = "ATIVA";
 
     this.turmaService.salvarTurma(this.data).subscribe((result: any) => {
         this.spinner.hide();
