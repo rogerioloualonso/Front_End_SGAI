@@ -109,6 +109,7 @@ export class FormDocenteComponent implements OnInit {
     this.data.matricula = this.formGroup.get('matricula').value;
     this.data.createdAt = this.docente.createdAt;
     this.data.id = this.docente.id;
+    this.data.senha = this.docente.senha;
 
     this.docenteService.atualizarDocente(this.data).subscribe((result: any) => {
         this.spinner.hide();
